@@ -1,0 +1,101 @@
+{
+  "collection": "Streetwear SS26",
+  "total_images": 11,
+  "assets": {
+    "logo": "https://i.imgur.com/D1piDh6.jpeg",
+    "background": "https://i.imgur.com/H0OKWfx.jpeg",
+    "background_alt": "https://i.imgur.com/aG1MtC6.jpeg",
+    "hero_video": "https://1gp6uek1b6.ucarecd.net/86d5d8e8-9534-47f3-93b9-bccf322b845f/filxyspin.mp4",
+    "hero_image": "https://i.imgur.com/h0CQH9r.jpeg"
+  },
+  "images": [
+    {
+      "id": "IMAGE_01",
+      "url": "https://i.imgur.com/15VGOua.jpeg",
+      "alt": "Male model in beige trench coat, black hoodie, wide leg pants and sneakers, urban studio",
+      "caption": "Urban Trench: Layered beige trench over street essentials.",
+      "category": "luxury",
+      "gender": "male"
+    },
+    {
+      "id": "IMAGE_02", 
+      "url": "https://i.imgur.com/ZSoIE0R.jpeg",
+      "alt": "Male model in black hoodie, cargo pants, sneakers, dark alley background",
+      "caption": "Monochrome Black: Clean cargos + hoodie for everyday street.",
+      "category": "casual",
+      "gender": "male"
+    },
+    {
+      "id": "IMAGE_03",
+      "url": "https://i.imgur.com/rGsCnwF.jpeg",
+      "alt": "Male model in oversized cream sweater, tan pants, cream sneakers, studio",
+      "caption": "Cream Set: Soft tones, oversized fit, luxury casual.",
+      "category": "luxury",
+      "gender": "male"
+    },
+    {
+      "id": "IMAGE_04",
+      "url": "https://i.imgur.com/MEiTkwP.jpeg",
+      "alt": "Male model in utility vest over tee, baggy jeans, cap, chunky sneakers",
+      "caption": "Utility Street: Vest layering + cargos for a functional look.",
+      "category": "utility",
+      "gender": "male"
+    },
+    {
+      "id": "IMAGE_05",
+      "url": "https://i.imgur.com/MbrBccx.jpeg",
+      "alt": "Male model in graphic tee, shorts, bucket hat, skate shoes at skatepark",
+      "caption": "Skate Day: Baggy tee + cargos, built for the park.",
+      "category": "skate",
+      "gender": "male"
+    },
+    {
+      "id": "IMAGE_06",
+      "url": "https://i.imgur.com/6ih7aWG.jpeg",
+      "alt": "Female model in beige trench, cropped hoodie, wide leg trousers, luxury sneakers",
+      "caption": "Casual Luxury: Oversized trench meets tailored street.",
+      "category": "luxury",
+      "gender": "female"
+    },
+    {
+      "id": "IMAGE_07",
+      "url": "https://i.imgur.com/ZhVdcot.jpeg",
+      "alt": "Female model in oversized graphic tee, cargo shorts, bucket hat, skate shoes",
+      "caption": "Skate Girl: Relaxed fit + bucket hat for skate sessions.",
+      "category": "skate",
+      "gender": "female"
+    },
+    {
+      "id": "IMAGE_08",
+      "url": "https://i.imgur.com/pMQm9Ym.jpeg",
+      "alt": "Male model in all black hoodie, cargo pants, sneakers, alley background",
+      "caption": "All Black: Minimal monochrome streetwear.",
+      "category": "casual",
+      "gender": "male"
+    },
+    {
+      "id": "IMAGE_09",
+      "url": "https://i.imgur.com/Q1JNjC2.jpeg",
+      "alt": "Female model in utility vest, long sleeve tee, baggy jeans, crossbody bag",
+      "caption": "City Utility: Vest + baggy denim for daily wear.",
+      "category": "utility",
+      "gender": "female"
+    },
+    {
+      "id": "IMAGE_010",
+      "url": "https://i.imgur.com/99xP3xT.jpeg",
+      "alt": "Female model in cream knit set, oversized wool coat, luxury sneakers",
+      "caption": "Cream Luxury: Knit set layered with a wool coat.",
+      "category": "luxury",
+      "gender": "female"
+    },
+    {
+      "id": "IMAGE_011",
+      "url": "https://i.imgur.com/jeeuzmu.jpeg",
+      "alt": "",
+      "caption": "",
+      "category": "",
+      "gender": ""
+    }
+  ]
+}

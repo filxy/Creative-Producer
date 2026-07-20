@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filxy — Ice Drop</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    width: 100%; max-width: 760px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 32px;
+    border-bottom: 1px solid #00BFFF33;
+  }
+  .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: 4px; color: #00BFFF; text-transform: uppercase; }
+  .nav-tag  { font-size: 11px; color: #555; letter-spacing: 1px; text-transform: uppercase; }
+
+  .hero-image { width: 100%; max-width: 760px; position: relative; overflow: hidden; border-bottom: 2px solid #00BFFF; }
+  .hero-image img { width: 100%; height: 480px; object-fit: cover; object-position: center top; display: block; filter: brightness(0.75) contrast(1.1); }
+  .hero-image::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to top, #000000ee 0%, #000000aa 30%, transparent 70%);
+    z-index: 1;
+  }
+  .hero-image-text { position: absolute; bottom: 32px; left: 32px; right: 32px; z-index: 2; }
+  .drop-badge {
+    display: inline-block; background: #00BFFF; color: #000;
+    font-size: 10px; font-weight: 900; letter-spacing: 3px;
+    text-transform: uppercase; padding: 5px 14px; margin-bottom: 14px;
+  }
+  .hero-image-text h1 { font-size: 48px; font-weight: 900; line-height: 1.0; letter-spacing: -1px; text-transform: uppercase; }
+  .hero-image-text h1 span { color: #00BFFF; }
+  .hero-image-text p { font-size: 12px; color: #aaa; letter-spacing: 3px; text-transform: uppercase; margin-top: 8px; }
+
+  .hero { width: 100%; max-width: 760px; padding: 40px 32px 48px; text-align: center; border-bottom: 1px solid #00BFFF22; }
+  .timer-label { font-size: 10px; color: #00BFFF; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+  .timer { display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; }
+  .timer-block { display: flex; flex-direction: column; align-items: center; background: #0a0a0a; border: 1px solid #00BFFF44; padding: 14px 20px; min-width: 72px; }
+  .timer-num { font-size: 32px; font-weight: 900; color: #00BFFF; line-height: 1; }
+  .timer-unit { font-size: 9px; color: #555; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+  .cta-btn { display: inline-block; background: #00BFFF; color: #000; font-size: 13px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; padding: 18px 48px; text-decoration: none; }
+  .cta-sub { font-size: 11px; color: #333; margin-top: 14px; letter-spacing: 1px; }
+
+  .video-section { width: 100%; max-width: 760px; padding: 56px 32px; border-bottom: 1px solid #00BFFF22; }
+  .section-label { font-size: 10px; color: #00BFFF; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; }
+  .video-wrapper {
+    position: relative; width: 100%; background: #080808;
+    border: 1px solid #00BFFF33; overflow: hidden;
+    display: flex; align-items: center; justify-content: center; min-height: 320px;
+  }
+  .video-wrapper video { width: 100%; max-height: 480px; object-fit: cover; display: block; }
+  .video-badge {
+    position: absolute; top: 16px; right: 16px;
+    background: #00BFFF; color: #000;
+    font-size: 9px; font-weight: 900; letter-spacing: 2px;
+    text-transform: uppercase; padding: 4px 10px; z-index: 2;
+  }
+
+  .product-section { width: 100%; max-width: 760px; padding: 48px 32px; border-bottom: 1px solid #00BFFF22; }
+  .product-meta { background: #080808; border: 1px solid #00BFFF22; padding: 24px 28px; }
+  .product-name { font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; color: #fff; margin-bottom: 6px; }
+  .product-desc { font-size: 12px; color: #555; line-height: 1.7; margin-bottom: 20px; }
+  .product-desc span { color: #00BFFF; }
+  .product-stock { font-size: 10px; color: #ff4444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .size-row { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .size-btn { border: 1px solid #333; background: transparent; color: #888; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 6px 12px; text-transform: uppercase; }
+  .size-btn.active { border-color: #00BFFF; color: #00BFFF; }
+  .size-btn.sold { border-color: #1a1a1a; color: #2a2a2a; text-decoration: line-through; }
+  .product-price { font-size: 28px; font-weight: 900; color: #00BFFF; margin-bottom: 16px; }
+
+  .captions-section { width: 100%; max-width: 760px; padding: 48px 32px; border-bottom: 1px solid #00BFFF22; }
+  .caption-cards { display: flex; flex-direction: column; gap: 16px; }
+  .caption-card { background: #080808; border-left: 3px solid #00BFFF; padding: 20px 24px; }
+  .caption-platform { font-size: 9px; color: #00BFFF; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+  .caption-text { font-size: 14px; color: #ccc; line-height: 1.6; font-style: italic; }
+
+  footer { width: 100%; max-width: 760px; padding: 32px 32px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+  .footer-tagline { font-size: 18px; font-weight: 900; color: #fff; letter-spacing: 1px; }
+  .footer-tagline span { color: #00BFFF; }
+  .footer-links { display: flex; gap: 24px; font-size: 11px; color: #333; letter-spacing: 2px; text-transform: uppercase; }
+  .footer-links a { color: #333; text-decoration: none; }
+  .made-with { margin-top: 16px; font-size: 11px; color: #2a2a2a; letter-spacing: 1px; border-top: 1px solid #111; padding-top: 16px; width: 100%; text-align: center; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Filxy</div>
+  <div class="nav-tag">Ice Drop 004 — Limited</div>
+</nav>
+
+<div class="hero-image">
+  <img src="https://i.imgur.com/h0CQH9r.jpeg" alt="Filxy Ice Glow Hoodie" />
+  <div class="hero-image-text">
+    <div class="drop-badge">⚡ Ice Drop Live Now</div>
+    <h1>Ice Glow<br><span>Hoodie.</span></h1>
+    <p>Limited Units · 48 Hours Only</p>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="timer-label">Drop ends in</div>
+  <div class="timer">
+    <div class="timer-block"><div class="timer-num" id="hrs">47</div><div class="timer-unit">Hrs</div></div>
+    <div class="timer-block"><div class="timer-num" id="min">59</div><div class="timer-unit">Min</div></div>
+    <div class="timer-block"><div class="timer-num" id="sec">00</div><div class="timer-unit">Sec</div></div>
+  </div>
+  <a class="cta-btn" href="#">Cop Now</a>
+  <p class="cta-sub">Only 48 units left. No restocks. No excuses.</p>
+</section>
+
+<section class="video-section">
+  <div class="section-label">360 Product View</div>
+  <div class="video-wrapper">
+    <div class="video-badge">15s Reel</div>
+    <video id="filxy-video" loop muted playsinline>
+      <source src="https://1gp6uek1b6.ucarecd.net/86d5d8e8-9534-47f3-93b9-bccf322b845f/filxyspin.mp4" type="video/mp4">
+    </video>
+    <!-- Sound toggle — tap to unmute -->
+    <button id="sound-btn" style="
+      position:absolute; bottom:16px; right:16px; z-index:3;
+      background:#000; border:1px solid #00BFFF; color:#00BFFF;
+      font-size:11px; font-weight:900; letter-spacing:2px;
+      text-transform:uppercase; padding:8px 16px; cursor:pointer;
+    ">🔇 Tap for Sound</button>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="section-label">The Drop</div>
+  <div class="product-meta">
+    <div class="product-name">Ice Glow Oversized Hoodie</div>
+    <div class="product-desc">
+      Drop 004. Heavyweight 400gsm fleece.<br>
+      <span>Neon Blue #00BFFF</span> on pitch black.<br>
+      Oversized fit. Electric vibe. Built for the function.
+    </div>
+    <div class="product-stock">🔴 Only 48 units — no restock</div>
+    <div class="size-row">
+      <div class="size-btn sold">XS</div>
+      <div class="size-btn">S</div>
+      <div class="size-btn active">M</div>
+      <div class="size-btn">L</div>
+      <div class="size-btn">XL</div>
+      <div class="size-btn sold">XXL</div>
+    </div>
+    <div class="product-price">$89</div>
+    <a class="cta-btn" href="#" style="padding:14px 32px; font-size:12px;">Cop It</a>
+  </div>
+</section>
+
+<section class="captions-section">
+  <div class="section-label">The Vibe</div>
+  <div class="caption-cards">
+    <div class="caption-card">
+      <div class="caption-platform">Instagram · Caption 1</div>
+      <div class="caption-text">"Your fit is mid. Filxy ice blue drop just hit. Electric. Limited. Cop now. 🖤💙"</div>
+    </div>
+    <div class="caption-card">
+      <div class="caption-platform">Instagram · Caption 2</div>
+      <div class="caption-text">"Walked into the function in Filxy. Ice glow on full send. Whole room froze. 🖤💙"</div>
+    </div>
+    <div class="caption-card">
+      <div class="caption-platform">Instagram · Caption 3</div>
+      <div class="caption-text">"Electric blue. Limited drop. 48hrs only. Cop it or stay mid forever. Crying. 🖤💙"</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-tagline">Filxy. Not just clothes. <span>A vibe.</span></div>
+  <div class="footer-links">
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">Sizing</a>
+    <a href="#">Returns</a>
+  </div>
+  <div class="made-with">Made with IBM Bob</div>
+</footer>
+
+<style>
+  /* Live countdown */
+</style>
+<script>
+  // Live countdown — 48hrs from page load
+  const end = new Date(Date.now() + 48 * 60 * 60 * 1000);
+  function tick() {
+    const diff = Math.max(0, end - Date.now());
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('hrs').textContent = String(h).padStart(2,'0');
+    document.getElementById('min').textContent = String(m).padStart(2,'0');
+    document.getElementById('sec').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Video — autoplay muted, unmute on tap
+  const vid = document.getElementById('filxy-video');
+  const btn = document.getElementById('sound-btn');
+  vid.play();
+  btn.addEventListener('click', function() {
+    if (vid.muted) {
+      vid.muted = false;
+      btn.textContent = '🔊 Sound On';
+      btn.style.borderColor = '#00BFFF';
+      btn.style.color = '#00BFFF';
+      btn.style.background = '#001a2a';
+    } else {
+      vid.muted = true;
+      btn.textContent = '🔇 Tap for Sound';
+      btn.style.background = '#000';
+    }
+  });
+</script>
+
+</body>
+</html>
