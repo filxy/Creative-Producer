@@ -17,11 +17,6 @@ In the terminal, copy and paste these commands to clone the starter project and 
 
 ``` cd Creative-Producer ```
 
-<clipboard-copy for="blob-path" class="btn btn-sm BtnGroup-item">
-  Copy path
-</clipboard-copy>
-<div id="blob-path">src/index.js</div>
-
 Important: In IBM Bob, click File > Open Folder, then open the Creative-Producer folder that you just cloned.
 
 
