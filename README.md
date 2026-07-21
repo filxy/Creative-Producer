@@ -1,11 +1,11 @@
-*The Creative Producer*
+#The Creative Producer
 
-_AI-powered image + video creation, website generating and Instagram posting for streetwear brands_
+##_AI-powered image + video creation, website generating and Instagram posting for streetwear brands_
 
 Generate streetwear visuals, turn them into Reels, and post directly to Instagram Business accounts — all from one dashboard.
 IBM Bob is used to generate captions and webpage postings.
 
-Clone and open the starter project*
+*Clone and open the starter project*
 
 Follow these steps to clone the repository for thIS project:
 
