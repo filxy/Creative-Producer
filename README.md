@@ -13,9 +13,9 @@ In IBM Bob, click Terminal > New Terminal.
 
 In the terminal, copy and paste these commands to clone the starter project and open it:
 
-```bash git clone https://github.com/filxy/Creative-Producer.git```
+``` git clone https://github.com/filxy/Creative-Producer.git ```
 
-```bash cd Creative-Producer```
+``` cd Creative-Producer ```
 
 Important: In IBM Bob, click File > Open Folder, then open the Creative-Producer folder that you just cloned.
 
