@@ -8,9 +8,11 @@ Generate streetwear visuals, turn them into Reels, and post directly to Instagra
 IBM Bob is used to generate captions and webpage postings.
 
 
-
-[![Watch the video](https://youtube.com)](https://youtu.be/lX3BVY-eX1U)
-
+<p align="center">
+  <a href="https://youtu.be/lX3BVY-eX1U">
+    <img src="https://youtube.com" alt="Watch the video" width="70%">
+  </a>
+</p>
 
 
 *Download & Install IBM Bob*
