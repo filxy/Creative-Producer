@@ -5,7 +5,11 @@
 Generate streetwear visuals, turn them into Reels, and post directly to Instagram Business accounts — all from one dashboard.
 IBM Bob is used to generate captions and webpage postings.
 
-*Download IBM Bob*
+*Download & Install IBM Bob*
+
+|[IBM Bob](https://bob.ibm.com/)|
+
+*Create Free Trial for IBM Bob*
 
 *Clone and open the starter project*
 
