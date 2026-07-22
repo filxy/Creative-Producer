@@ -22,7 +22,25 @@ git clone https://github.com/filxy/Creative-Producer.git
 cd Creative-Producer
 ```
 
++ *Open Project folder in IBM Bob.*
 
++ *Update New Theme to HTML page.*
+
++ *Upload images and audio to cloud to share URL in .env file with IBM Bob.*
+
++ *Prompt IBM Bob to update the webpage by adding new images.*
+
++ *Create a REEL of the image, add transition's and add music.* 
+
++ *Upload to Instagram account with Captions.*
+
++ *Add Instagram auto-posting to this project.*
+
+### Note: 
+
+Instgram Business account is required and INSTAGRAM API and INSTAGRAM ID needs to be updated in .env file along with Media URL'S.
+
+You can use imgur to upload images or Uploadcare and share URL's links of any media.
 
 Important: In IBM Bob, click File > Open Folder, then open the Creative-Producer folder that you just cloned.
 
