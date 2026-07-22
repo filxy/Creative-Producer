@@ -7,12 +7,8 @@
 Generate streetwear visuals, turn them into Reels, and post directly to Instagram Business accounts — all from one dashboard.
 IBM Bob is used to generate captions and webpage postings.
 
-
-<p align="center">
-  <a href="https://youtu.be/lX3BVY-eX1U">
-    <img src="https://youtube.com" alt="Watch the video" width="70%">
-  </a>
-</p>
+## Demo
+[![YouTube Video](https://img.shields.io/badge/Watch%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/watch?lX3BVY-eX1U)
 
 
 *Download & Install IBM Bob*
